@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import axios from "axios";
-import Home from "../pages/Home";
+
 import Movie from "./Movie";
 
 const Row = ({ title, fetchURL,rowID }) => {

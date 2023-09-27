@@ -1,9 +1,13 @@
 import React,{useState} from "react";
-import Row from "./Row";
+import { db } from "../firebase";
+import { arrayUnion,doc,updateDoc } from "firebase/firestore";
 import {FaHeart, FaRegHeart} from 'react-icons/fa'
+import { UserAuth } from "../context/AuthContext";
 
 const Movie = ({item1}) => {
     const[like,setLike] = useState(false)
+    const[saved,setSaved] = useState(false)
+    const {user} =UserAuth()
   return (
     <div
       key={item1.id}
