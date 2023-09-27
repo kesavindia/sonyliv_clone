@@ -1,7 +1,7 @@
 import React,{ useState } from 'react'
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
+import {Home} from './pages/Home'
 import { AuthContextProvider } from './context/AuthContext'
 import Login from './pages/Login'
 import Signup from './pages/SignUp'

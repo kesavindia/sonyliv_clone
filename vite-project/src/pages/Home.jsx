@@ -3,7 +3,7 @@ import Main from '../components/Main'
 import Row from '../components/Row'
 import requests from '../Request'
 
-const Home = () => {
+export const Home = () => {
   return (
     <div>
         <Main/>
@@ -17,4 +17,3 @@ const Home = () => {
   )
 }
 
-export default Home
