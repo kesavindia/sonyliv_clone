@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent; /* optional, customize scrollbar color */
+    background-color: #000000;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar in WebKit browsers (like Chrome and Safari) */
+  }
