@@ -19,22 +19,28 @@ const SavedShows = () => {
   };
 
   useEffect(() => {
-    onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
+    const unsubscribe = onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
       setMovies(doc.data()?.savedShows);
     });
+
+    // Cleanup function to detach the listener when the component unmounts
+    return () => {
+      unsubscribe();
+    };
   }, [user?.email]);
 
-  const movieRef = doc(db, 'users', `${user?.email}`)
+  const movieRef = doc(db, 'users', `${user?.email}`);
   const deleteShow = async (passedID) => {
-      try {
-        const result = movies.filter((item) => item.id !== passedID)
-        await updateDoc(movieRef, {
-            savedShows: result
-        })
-      } catch (error) {
-          console.log(error)
-      }
-  }
+    try {
+      const result = movies.filter((item) => item.id !== passedID);
+      await updateDoc(movieRef, {
+        savedShows: result,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   return (
     <>
@@ -49,9 +55,9 @@ const SavedShows = () => {
           id={'slider'}
           className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'
         >
-          {movies.map((item) => (
+          {movies.map((item,id) => (
             <div
-              key={item.id}
+              key={id}
               className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
             >
               <img
