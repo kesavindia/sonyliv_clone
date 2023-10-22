@@ -39,14 +39,14 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 className='p-3 my-2 bg-gray-700 rouded'
                 type='email'
-                placeholder='Email'
+                placeholder='Enter Email'
                 autoComplete='email'
               />
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 className='p-3 my-2 bg-gray-700 rouded'
                 type='password'
-                placeholder='Password'
+                placeholder='Enter Password'
                 autoComplete='current-password'
               />
               <button className='bg-red-600 py-3 my-6 rounded font-bold'>
