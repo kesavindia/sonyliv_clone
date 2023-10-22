@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import {Home} from './pages/Home'
 import { AuthContextProvider } from './context/AuthContext'
 import Login from './pages/Login'
-import Signup from './pages/SignUp'
+import Signup from './pages/Signup'
 import ProtectedRoute from './components/ProtectedRoute'
 import { Account } from './pages/Account'
 export default function App() {
